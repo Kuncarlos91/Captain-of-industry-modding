@@ -16,9 +16,8 @@ namespace ExampleMod {
 			public static readonly ProductID MyAmazingFluidProduct = Ids.Products.CreateId("MyAmazingFluidProduct");
 
 
-			[LooseProduct(pile: PileFamily.DirtLike, dumpByDefault: true,
-				material: Assets.Base.Products.Loose.DirtConveyorPile_mat,
-				prefab: Assets.Base.Products.Loose.DirtConveyor_prefab,
+			[LooseProduct(dumpByDefault: true,
+				material: Assets.Base.Products.Loose.Piles.Conveyor.DirtLike01_prefab,
 				icon: Assets.Base.Products.Icons.Dirt_svg)]
 			public static readonly ProductID MySlickLooseProduct = Ids.Products.CreateId("MySlickLooseProduct");
 

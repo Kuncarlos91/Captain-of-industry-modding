@@ -24,7 +24,7 @@ namespace ExampleMod.ReferenceCode {
 				name: "My flat balancer",
 				portShape: db.GetOrThrow<IoPortShapeProto>(Ids.IoPortShapes.FlatConveyor),
 				costs: Costs.Transports.FlatZipper,
-				prefabPath: CountableZipper_prefab,
+				prefabPath: CountableSorter_prefab,
 				disableCosts: DISABLE_COSTS);
 
 			registerBalancer(registrator,
@@ -38,7 +38,7 @@ namespace ExampleMod.ReferenceCode {
 				name: "My pipe balancer",
 				portShape: db.GetOrThrow<IoPortShapeProto>(Ids.IoPortShapes.Pipe),
 				costs: Costs.Transports.FluidZipper,
-				prefabPath: LiquidZipper_prefab,
+				prefabPath: FluidZipper_prefab,
 				disableCosts: DISABLE_COSTS);
 
 		}
@@ -57,7 +57,7 @@ namespace ExampleMod.ReferenceCode {
 				strings: Proto.CreateStr(id, name,
 					"Allows distributing and prioritizing products using any of its two input and output ports.",
 					translationComment: "small machine that allows splitting and merging of transports"),
-				costs: costs.MapToEntityCosts(registrator.PrototypesDb, disableCosts),
+				costs: costs.MapToEntityCosts(registrator, disableCosts),
 				requiredPower: 5.Kw(),
 				layout: registrator.LayoutParser.ParseLayoutOrThrow(
 					// Allow port connection only to transports, otherwise balancing logic can is broken.
